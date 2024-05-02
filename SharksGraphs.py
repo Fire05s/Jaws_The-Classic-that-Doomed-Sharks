@@ -10,12 +10,6 @@ pd.options.display.max_colwidth = 80
 np.set_printoptions(precision=4, suppress=True)
 
 df = pd.read_excel ('Australian_Shark_Incident_Database_Public_Version.xlsx')
-# columnNameSeries = df.columns
-# print (columnNameSeries)
-# sharkNameSeries = df [['Shark.common.name']].value_counts()
-# print (sharkNameSeries)
-# print (df.groupby('State')[['Shark.length.m']].agg(['mean','min','max']))
-# print (np.full (5,5))
 
 # Number of Yearly Incidents
 # incidentYears = df[['Incident.year']].drop_duplicates()
@@ -24,9 +18,39 @@ df = pd.read_excel ('Australian_Shark_Incident_Database_Public_Version.xlsx')
 # print (yearlyIncidentSeries)
 # yearlyIncidentPlot = plt.plot (incidentYears.values, yearlyIncidentSeries.values)
 # plt.xlabel ('Incident Year')
-# plt.ylabel ('Number of Yearly Shark Incidents')
-# plt.title ('Number of Yearly Incidents from 1791 - 2023')
+# plt.ylabel ('Number of Yearly Australian Shark Incidents')
+# plt.title ('Number of Yearly Australian Shark Incidents from 1791 - 2023')
 # plt.show ()
+
+# Number of Yearly Uninjured Incidents
+# filtered_df = df[df['Victim.injury'] == 'uninjured']
+# grouped_data = filtered_df.groupby('Incident.year').size()
+# yearlyUninjuredPlot = plt.bar(grouped_data.index, grouped_data.values)
+# plt.xlabel('Incident Year')
+# plt.ylabel('Number of Uninjured Cases')
+# plt.title('Number of Uninjured Australian Shark Incidents from 1791 - 2023')
+# plt.xlim (1780)
+# plt.show()
+
+# Number of Yearly Injured Incidents
+# filtered_df = df[df['Victim.injury'] == 'injured']
+# grouped_data = filtered_df.groupby('Incident.year').size()
+# yearlyUninjuredPlot = plt.bar(grouped_data.index, grouped_data.values)
+# plt.xlabel('Incident Year')
+# plt.ylabel('Number of Injured Cases')
+# plt.title('Number of Injured Australian Shark Incidents from 1791 - 2023')
+# plt.xlim (1780)
+# plt.show()
+
+# Number of Yearly Fatal Incidents
+# filtered_df = df[df['Victim.injury'] == 'fatal']
+# grouped_data = filtered_df.groupby('Incident.year').size()
+# yearlyUninjuredPlot = plt.bar(grouped_data.index, grouped_data.values)
+# plt.xlabel('Incident Year')
+# plt.ylabel('Number of Fatal Cases')
+# plt.title('Number of Fatal Australian Shark Incidents from 1791 - 2023')
+# plt.xlim (1780)
+# plt.show()
 
 trData = pd.ExcelFile ('SP-Transcribed_Data.xlsx')
 
@@ -36,6 +60,7 @@ trData = pd.ExcelFile ('SP-Transcribed_Data.xlsx')
 # NSWSharksCaughtIndex = NSWCaughtSheet [['Year']].to_numpy ().flatten ()
 # NSWSeries = pd.Series (NSWSharksCaughtData, NSWSharksCaughtIndex)
 # NSWSharksCaughtPlot = NSWSeries.plot (xlabel = 'Year', ylabel = 'Numbers of White Sharks Caught', kind = 'bar', title = 'Total numbers of white sharks caught in the NSW shark control program 1950 – 2000 (data supplied by NSW Fisheries)')
+# plt.ylim (0,40)
 # plt.show ()
 
 # QLD Shark Control Program - Sharks Caught (p. 53)
@@ -44,6 +69,7 @@ trData = pd.ExcelFile ('SP-Transcribed_Data.xlsx')
 # QLDSharksCaughtIndex = QLDCaughtSheet [['Year']].to_numpy ().flatten ()
 # QLDSeries = pd.Series (QLDSharksCaughtData, QLDSharksCaughtIndex)
 # QLDSharksCaughtPlot = QLDSeries.plot (xlabel = 'Year', ylabel = 'Numbers of White Sharks Caught', kind = 'bar', title = 'Total numbers of white sharks caught in the Qld shark control program 1962 – 1998 (data supplied by QDPI)')
+# plt.ylim (0,40)
 # plt.show ()
 
 # GFCSA - Sharks Caught (p. 55)
@@ -52,6 +78,7 @@ trData = pd.ExcelFile ('SP-Transcribed_Data.xlsx')
 # GFCSASharksCaughtIndex = GFCSACaughtSheet [['Year']].to_numpy ().flatten ()
 # GFCSASeries = pd.Series (GFCSASharksCaughtData, GFCSASharksCaughtIndex)
 # GFCSASharksCaughtPlot = GFCSASeries.plot (xlabel = 'Biennial Years', ylabel = 'Numbers of White Sharks Caught', kind = 'bar', title = 'White sharks caught by the GFCSA (1938 - 1990)')
+# plt.ylim (0,40)
 # plt.show ()
 
 # NSW Shark Control Program - Catch per Unit Effort (p. 59)
