@@ -1,4 +1,18 @@
 # Senior Project - "Jaws: The Classic that Doomed Sharks"
 Work on my Senior Project (independent, advised research), investigating how media portrayals of sharks have affected Australian White Shark populations.
 
-If you’re looking to continue any of my work or if you use any of my files, I’d greatly appreciate a citing and a message as I’d love to see what more can be accomplished for my favorite animals.
+## License
+
+Copyright **2025** **Brandon Tsai**
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
